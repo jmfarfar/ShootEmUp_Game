@@ -14,6 +14,13 @@ public class ShipController : MonoBehaviour
     private float rollInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
 
+    CharacterController characterController;
+
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +60,9 @@ public class ShipController : MonoBehaviour
         activeHoverSpeed = Mathf.Lerp(activeHoverSpeed, Input.GetAxisRaw("Hover") * hoverSpeed, hoverAcceleration * Time.deltaTime);
 
         // Moving the ship
-        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
-        transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+        //transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
+        //transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+
+        characterController.Move(((transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime)) + transform.forward * activeForwardSpeed * Time.deltaTime);
     }
 }
