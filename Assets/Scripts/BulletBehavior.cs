@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     private Rigidbody rb;
-    [SerializeField] private float bulletSpeed = 300f;
+    [SerializeField] private float bulletSpeed = 600f;
 
 
     // Start is called before the first frame update
@@ -36,7 +36,8 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
+        if(other.gameObject.CompareTag("Enemy"))
+            gameObject.SetActive(false);
         
     }
 

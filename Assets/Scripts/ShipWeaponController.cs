@@ -6,34 +6,31 @@ public class ShipWeaponController : MonoBehaviour
 {
 
     Vector3 direction;
-  public Transform bulletSpawnPoint;
-  public float shotSpeed;
+    public Transform bulletSpawnPoint;
+    //public float shotSpeed;
     private void Update()
     {
         // Left click 
         if (Input.GetMouseButtonDown(0))
         {
-        Bullets();
+            Bullets();
         }
     }
 
-
-
-
     public void Bullets()
-  {
-    GameObject bullet = BulletPool.Instance.BulletActive();
-    if(bullet != null)
     {
-      direction = transform.position;
-      bullet.transform.position = bulletSpawnPoint.position;
-      bullet.transform.forward = direction.normalized;
-     bullet.GetComponent<Rigidbody>().velocity=direction.normalized * shotSpeed;
+        GameObject bullet = BulletPool.Instance.BulletActive();
+        if (bullet != null)
+        {
+            direction = transform.position;
+            bullet.transform.position = bulletSpawnPoint.position;
+            bullet.transform.forward = transform.forward.normalized;
+            //bullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * shotSpeed;
+        }
+
+
+
     }
-
-
-
-  }
 
 
 
