@@ -27,15 +27,19 @@ public class TurbineMovement : MonoBehaviour
     void Update()
     {
         float movementDirection = Vector3.Dot(movementVector, transform.forward);
-        Debug.Log(movementDirection);
+        //Debug.Log(movementDirection);
+        movementDirection = Mathf.Round(movementDirection);
         
         foreach (GameObject turbine in turbines)
         {
-            Quaternion targetRotation = Quaternion.Euler(rotationFactor * movementDirection,
-                turbine.transform.rotation.eulerAngles.y,
-                turbine.transform.rotation.eulerAngles.z);
+            Quaternion targetRotation = Quaternion.Euler((rotationFactor * movementDirection) - 90f,
+                0f,
+                0f);
+            Debug.Log("target: " +targetRotation.eulerAngles);
+            Debug.Log("movement: " + movementDirection);
 
-            turbine.transform.rotation = Quaternion.Lerp(turbine.transform.rotation, targetRotation, interpolationTime);
+            turbine.transform.localRotation = Quaternion.Lerp(turbine.transform.localRotation, targetRotation, interpolationTime);
+            //turbine.transform.localRotation = targetRotation;
         }
     }
 }
