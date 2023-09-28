@@ -35,8 +35,8 @@ public class TurbineMovement : MonoBehaviour
             Quaternion targetRotation = Quaternion.Euler((rotationFactor * movementDirection) - 90f,
                 0f,
                 0f);
-            Debug.Log("target: " +targetRotation.eulerAngles);
-            Debug.Log("movement: " + movementDirection);
+            //Debug.Log("target: " +targetRotation.eulerAngles);
+            //Debug.Log("movement: " + movementDirection);
 
             turbine.transform.localRotation = Quaternion.Lerp(turbine.transform.localRotation, targetRotation, interpolationTime);
             //turbine.transform.localRotation = targetRotation;

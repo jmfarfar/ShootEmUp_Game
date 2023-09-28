@@ -44,8 +44,8 @@ public class ShipWeaponController : MonoBehaviour
             {
                 direction = transform.position;
                 bullet.transform.position = bulletSpawnPoint.position;
-                bullet.transform.forward = direction.normalized;
-                bullet.GetComponent<Rigidbody>().velocity = direction.normalized * shotSpeed;
+                bullet.transform.forward = transform.forward.normalized;
+                //bullet.GetComponent<Rigidbody>().velocity = direction.normalized * shotSpeed;
                 AudioManager.Instance.PlaySound(shootClip, shootMixer);
             }
         }
