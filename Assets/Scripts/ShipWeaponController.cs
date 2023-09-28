@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ShipWeaponController : MonoBehaviour
 {
+    public AudioClip shootClip;
+    public AudioMixerGroup shootMixer;
 
     Vector3 direction;
     public Transform bulletSpawnPoint;
@@ -25,29 +28,10 @@ public class ShipWeaponController : MonoBehaviour
             direction = transform.position;
             bullet.transform.position = bulletSpawnPoint.position;
             bullet.transform.forward = transform.forward.normalized;
-            //bullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * shotSpeed;
+
+            AudioManager.Instance.PlaySound(shootClip, shootMixer);
         }
-
-
-
     }
-
-
-
-
 }
 
-//public class ShipWeaponController : MonoBehaviour
-//{
-//    private void FixedUpdate()
-//    {
-//        // Left click 
-//        if (Input.GetMouseButtonDown(0))
-//        {
-//            GameObject bullet = BulletPool.Instance.BulletActive();
-//            bullet.transform.SetPositionAndRotation(transform.position, transform.parent.rotation);
 
-//            //bullet.transform.rotation = Quaternion.LookRotation(transform.forward - transform.position);
-//        }
-//    }
-//}
