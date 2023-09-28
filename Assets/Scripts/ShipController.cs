@@ -16,9 +16,19 @@ public class ShipController : MonoBehaviour
 
     CharacterController characterController;
 
+ //**************************************
+    private Ship ship;   
+    [Header("PwrUp Velocity Settings")]
+    [SerializeField] private float boostedSpeedMultiply = 1.2f;
+    [SerializeField] private float timeSpeedBoost = 5f;    
+    private float speedCoolDown = 0f;
+    private float currentForwardSpeed, currentStrafeSpeed;         
+ //**************************************
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        ship = GetComponent<Ship>();        
     }
 
     // Start is called before the first frame update
@@ -65,4 +75,38 @@ public class ShipController : MonoBehaviour
 
         characterController.Move(((transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime)) + transform.forward * activeForwardSpeed * Time.deltaTime);
     }
+
+
+    public void SpeedBoostActive()
+    {
+        if (speedCoolDown == 0)
+        {
+            currentForwardSpeed = forwardSpeed;
+            currentStrafeSpeed = strafeSpeed;
+            forwardSpeed *= boostedSpeedMultiply;
+            strafeSpeed *= boostedSpeedMultiply;            
+            StartCoroutine(SpeedBoostPowerDown());
+            
+
+        }
+        else
+        {
+            speedCoolDown += timeSpeedBoost;
+        }
+    }
+
+    IEnumerator SpeedBoostPowerDown()
+    {
+        speedCoolDown += timeSpeedBoost;
+        while(speedCoolDown > 0)
+        {
+            yield return new WaitForSeconds(1.0f);
+            speedCoolDown--;
+        }
+
+        forwardSpeed = currentForwardSpeed;
+        strafeSpeed = currentStrafeSpeed;        
+    }
+
+
 }
