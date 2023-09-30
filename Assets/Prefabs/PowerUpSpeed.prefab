@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6745106602726662673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 257024227343620562, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_Name
+      value: PowerUpSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227343620563, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257024227458317677, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1065fdfa461c32b4793e52d4fb2298f1, type: 2}
+    - target: {fileID: 1463871697664083039, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5dde717dad961914fbe5e6b834338643, type: 2}
+    - target: {fileID: 1463871698562464080, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 99963ec79fc168545a4ecc8f0294e85d, type: 2}
+    - target: {fileID: 2866104836663646421, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: powerUpType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866104836663646421, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: velocityBurstSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d4a319d0bee22d6449f74ae80ef03613, type: 3}
+    - target: {fileID: 2866104836663646421, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: shieldActivateSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9329a37b327f3d14fa4d4d6ca4466157, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 274fcebaa1113a04cb462a217324199a, type: 3}

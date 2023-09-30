@@ -4,56 +4,65 @@ using UnityEngine;
 
 public class EnemyPool : MonoBehaviour
 {
-  public static EnemyPool enemyInstance;  
-  private List<GameObject> pooledObjects = new List<GameObject>();
-    [SerializeField]  private int amountToPool = 20;
-  [SerializeField] private GameObject enemyPrefab;
+    public static EnemyPool enemyInstance;
+    // private List<GameObject> pooledObjects = new List<GameObject>();
+    [SerializeField] private int amountToPool = 3;
+    [SerializeField] private GameObject enemyPrefab;
 
-  private void Awake()
-  {
-    if(enemyInstance == null)
-    {
-      enemyInstance = this;
-    }
-    else
-    {
-      Destroy(gameObject);
-    }
-  }
-
-
-  void Start()
-  {
-    AddEnemy(amountToPool);
-  }
-
-
-  void AddEnemy(int poolSize)
-  {
-    for(int i =0; i<poolSize; i++)
-    {
-      GameObject enemy = Instantiate(enemyPrefab, Random.insideUnitSphere, Quaternion.identity);
-      enemy.SetActive(true);
-      pooledObjects.Add(enemy);
-      enemy.transform.parent = transform;
-    }
-  }
-
-
-  public GameObject GetPooledObject()
-  {
-    for(int i =0; i< pooledObjects.Count; i++)
-    {
-      if(!pooledObjects[i].activeInHierarchy)
+    /*
+      private void Awake()
       {
-        pooledObjects[i].SetActive(true);        
-        return pooledObjects[i];
+
+        if(enemyInstance == null)
+        {
+          enemyInstance = this;
+
+        }
+        else
+        {
+          Destroy(gameObject);
+        }
+
       }
+
+
+      void Start()
+      {
+        AddEnemy(amountToPool);
+      }
+    */
+
+    void Start()
+    {
+        AddEnemy();
     }
-    AddEnemy(1);
-    pooledObjects[pooledObjects.Count - 1].SetActive(true);
-    return pooledObjects[pooledObjects.Count - 1];
-  }
-  
-  
+
+    void AddEnemy()
+    {
+        for (int i = 0; i < amountToPool; i++)
+        {
+            GameObject enemy = Instantiate(enemyPrefab, (Random.onUnitSphere *10f) + this.transform.position, Quaternion.identity);
+            //    enemy.SetActive(true);
+            //     pooledObjects.Add(enemy);
+            //enemy.transform.parent = transform;
+        }
+    }
+
+    /*
+      public GameObject GetPooledObject()
+      {
+        for(int i =0; i< pooledObjects.Count; i++)
+        {
+          if(!pooledObjects[i].activeInHierarchy)
+          {
+            pooledObjects[i].SetActive(true);        
+            return pooledObjects[i];
+          }
+        }
+        AddEnemy(1);
+        pooledObjects[pooledObjects.Count - 1].SetActive(true);
+        return pooledObjects[pooledObjects.Count - 1];
+      }
+
+      */
 }
