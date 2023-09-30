@@ -87,5 +87,15 @@ PrefabInstance:
       propertyPath: powerUpType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2866104836663646421, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: velocityBurstSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d4a319d0bee22d6449f74ae80ef03613, type: 3}
+    - target: {fileID: 2866104836663646421, guid: 274fcebaa1113a04cb462a217324199a,
+        type: 3}
+      propertyPath: shieldActivateSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9329a37b327f3d14fa4d4d6ca4466157, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 274fcebaa1113a04cb462a217324199a, type: 3}
