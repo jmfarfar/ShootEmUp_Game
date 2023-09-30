@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour
     public void Credits()
     {
         StartCoroutine (CreditsSound());
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Creditos");
     }   
 
     IEnumerator BeginSound()

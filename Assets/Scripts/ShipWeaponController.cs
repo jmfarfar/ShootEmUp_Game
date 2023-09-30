@@ -34,7 +34,9 @@ public class ShipWeaponController : MonoBehaviour
     {
         if (ship.isTripleShotActive)
         {
-            Instantiate(tripleBulletPref, transform.position, Quaternion.identity);
+            GameObject bullet = Instantiate(tripleBulletPref, transform.position, Quaternion.identity);
+            bullet.transform.position = bulletSpawnPoint.position;
+            bullet.transform.forward = transform.forward.normalized;            
         }
         else
         {
@@ -46,9 +48,10 @@ public class ShipWeaponController : MonoBehaviour
                 bullet.transform.position = bulletSpawnPoint.position;
                 bullet.transform.forward = transform.forward.normalized;
                 //bullet.GetComponent<Rigidbody>().velocity = direction.normalized * shotSpeed;
-                AudioManager.Instance.PlaySound(shootClip, shootMixer);
+                
             }
         }
+        AudioManager.Instance.PlaySound(shootClip, shootMixer);
     }
 
     public void TripleShotActive()

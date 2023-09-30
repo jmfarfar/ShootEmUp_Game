@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Luna.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1c927a5d1b55d7e4780f9e5c1836409d
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 5fabd47f7e23e3241b83a4c3b0004b00
+  - enabled: 1
+    path: Assets/Scenes/HowToPlayOverlay.unity
+    guid: 3127ff8d56b4ea1438457b88bfbd195d
+  - enabled: 1
+    path: Assets/Scenes/PuaseMenu.unity
+    guid: 8596f6a6d0c2b624e83f730840e598dd
   m_configObjects: {}
