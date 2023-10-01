@@ -33,5 +33,10 @@ public class Menu : MonoBehaviour
         yield return new WaitForSeconds(2f);
     }
 
-    
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+
 }
